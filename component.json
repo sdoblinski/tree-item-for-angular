@@ -1,0 +1,17 @@
+{
+  "name": "tree-item-for-angular",
+  "repo": "sdoblinski/tree-item-for-angular",
+  "description": "Fully recurive tree item for angular.js, bootstrap.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "tree-item-for-angular.css"
+  ]
+}

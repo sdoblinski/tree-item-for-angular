@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<title>Chat</title>
+		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+		<script src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+		<script src="build/build.js"></script>
+		<link rel="stylesheet" type="text/css" href="build/build.css">
+		<script src="app.js"></script>
+
+		<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet"/>
+		
+
+	</head>
+	<body ng-controller="AppController">
+		<ul class="item-tree-list">
+			<li class="item-tree-item" ng-repeat="humanScience in humanSciences.children">
+				<a href="#" ng-click="humanScience.check([])"><span class="glyphicon" ng-class="{'glyphicon-unchecked': !humanScience.checked, 'glyphicon-check': humanScience.checked, 'has-checked-children':humanScience.checkedChildren}"></span></a>
+				<a href="#" ng-click="humanScience.toggleChildren()" ng-class="{'has-checked-children':humanScience.checkedChildren}">{{humanScience.name}}</a>
+				<ul class="item-tree-list">
+					<li class="item-tree-item" ng-repeat="person in humanScience.children" ng-show="humanScience.open">
+						<a href="#" ng-click="person.check([humanScience])"><span class="glyphicon" ng-class="{'glyphicon-unchecked': !person.checked, 'glyphicon-check': person.checked, 'has-checked-children':person.checkedChildren}"></span></a>
+						<a href="#" ng-click="person.toggleChildren(humanScience)" ng-class="{'has-checked-children':person.checkedChildren}">{{person.name}}</a>
+						<ul class="item-tree-list">
+							<li class="item-tree-item" ng-repeat="book in person.children" ng-show="person.open">
+								<a href="#" ng-click="book.check([person,humanScience])"><span class="glyphicon" ng-class="{'glyphicon-unchecked': !book.checked, 'glyphicon-check': book.checked, 'has-checked-children':book.checkedChildren}"></span></a>
+								<a href="#" ng-class="{'has-checked-children':book.checkedChildren}">{{book.name}}</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+.has-checked-children{
+	color:#a44;
+}
+
+.item-tree-list{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+.item-tree-item{
+	padding:2px;
+	padding-left:25px;
+}
