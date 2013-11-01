@@ -1,7 +1,7 @@
 
 # tree-item-for-angular
 
-  Fully recurive tree item for angular.js, bootstrap.
+  Fully recursive tree item for angular.js, bootstrap.
 
 ## Installation
 
